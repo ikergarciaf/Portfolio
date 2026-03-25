@@ -43,7 +43,7 @@ Si deseas replicar este entorno localmente:
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/tu-usuario/mi-portfolio.git](https://github.com/tu-usuario/mi-portfolio.git)
+    git clone https://github.com/ikergarciaf/Portfolio.git
     ```
 2.  **Instalar dependencias:**
     ```bash
