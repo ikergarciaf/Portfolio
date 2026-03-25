@@ -2,7 +2,7 @@
 
 Bienvenido a mi portfolio personal. Este proyecto es una plataforma de alto rendimiento diseñada para mostrar mi trayectoria en **Ciberseguridad**, **Inteligencia Artificial** y **Desarrollo Web Full-Stack**.
 
-> **Live Demo:** [https://tu-dominio.vercel.app](https://tu-dominio.vercel.app)
+> **Live Demo:** https://portfolioikerg.vercel.app
 
 ---
 
