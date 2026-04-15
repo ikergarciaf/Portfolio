@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Fira_Code } from "next/font/google"
 import "./globals.css"
+import ChatWidget from "@/components/ChatWidget";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +36,10 @@ export default function RootLayout({
     // Dynamic lang switching via JS is handled client-side in the context,
     // but the HTML attribute defaults to "es" for SEO / screen readers.
     <html lang="es" className={`${inter.variable} ${firaCode.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   )
 }
