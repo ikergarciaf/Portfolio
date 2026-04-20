@@ -5,65 +5,84 @@ import Nav from "@/components/nav"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft, ArrowUpRight, Bot } from "lucide-react"
+import Image from "next/image"
 
 interface Chatbot {
   name: string
   description: { en: string; es: string }
   tech: readonly string[]
   url: string
-  color: string
+  accentColor: string
+  logoBg: string
+  logoSrc: string
+  logoAlt: string
 }
 
 const CHATBOTS: Chatbot[] = [
   {
     name: "IKEA Chatbot",
     description: {
-      en: "Virtual assistant that helps users navigate IKEA's catalogue, find products, check availability, and get answers about assembly, delivery and store services.",
-      es: "Asistente virtual que ayuda a los usuarios a navegar el catálogo de IKEA, encontrar productos, consultar disponibilidad y resolver dudas sobre montaje, entrega y servicios de tienda.",
+      en: "Conversational assistant powered by the Gemini 1.5 Flash API with a custom system prompt that encodes IKEA's product catalogue, assembly FAQs and store policies. The React + Vite frontend streams responses via an Express proxy that injects the API key server-side, keeping credentials out of the client bundle. react-markdown renders structured responses with clickable links.",
+      es: "Asistente conversacional impulsado por la API Gemini 1.5 Flash con un system prompt personalizado que codifica el catálogo de IKEA, las FAQs de montaje y las políticas de tienda. El frontend React + Vite transmite respuestas en streaming a través de un proxy Express que inyecta la API key en el servidor, evitando exponer credenciales en el cliente. react-markdown renderiza respuestas estructuradas con enlaces clicables.",
     },
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js", "react-markdown"],
     url: "https://ikeachatbot.vercel.app/",
-    color: "#0058A3",
+    accentColor: "#0058A3",
+    logoBg: "bg-white",
+    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KyYVisHA4RYB1OO0YW9Gc7fD2bCKI1.png",
+    logoAlt: "IKEA logo",
   },
   {
     name: "Movistar Chatbot",
     description: {
-      en: "Customer support assistant for Movistar that handles tariff inquiries, contract management, technical issues and coverage information with real-time data visualisation.",
-      es: "Asistente de atención al cliente de Movistar que gestiona consultas de tarifas, contratos, incidencias técnicas e información de cobertura con visualización de datos en tiempo real.",
+      en: "Customer support agent for Movistar built with a multi-turn conversation history fed to Gemini 1.5 Flash, allowing context-aware follow-ups on tariffs, contracts and outages. Recharts renders real-time data visualisations (coverage maps, usage graphs) inline in the chat. The Express backend handles session state and rate-limiting on the API calls.",
+      es: "Agente de soporte al cliente de Movistar construido con un historial de conversación multi-turno enviado a Gemini 1.5 Flash, permitiendo seguimiento contextual sobre tarifas, contratos e incidencias. Recharts renderiza visualizaciones de datos en tiempo real (mapas de cobertura, gráficas de consumo) directamente en el chat. El backend Express gestiona el estado de sesión y el rate-limiting de las llamadas a la API.",
     },
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js", "Recharts"],
     url: "https://movistar-chatbot.vercel.app/",
-    color: "#019DF4",
+    accentColor: "#019DF4",
+    logoBg: "bg-[#019DF4]",
+    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xm050Hw5bCNh7ofRgbkWyW7dZrB9pp.png",
+    logoAlt: "Movistar logo",
   },
   {
     name: "SEUR Chatbot",
     description: {
-      en: "Logistics assistant for SEUR that lets users track shipments, schedule deliveries, report incidents and get information about shipping rates and collection points.",
-      es: "Asistente logístico de SEUR que permite rastrear envíos, programar entregas, reportar incidencias y consultar tarifas y puntos de recogida.",
+      en: "Logistics assistant that simulates SEUR's tracking and customer service flow using Gemini 1.5 Flash with a domain-specific system prompt covering shipment statuses, delivery rescheduling and pick-up point lookup. The Express API layer validates tracking number formats before forwarding to the LLM, reducing hallucinations with structured input constraints.",
+      es: "Asistente logístico que simula el flujo de seguimiento y atención al cliente de SEUR usando Gemini 1.5 Flash con un system prompt específico del dominio que cubre estados de envío, reprogramación de entregas y búsqueda de puntos de recogida. La capa de API Express valida los formatos de número de seguimiento antes de enviarlos al LLM, reduciendo alucinaciones con restricciones de entrada estructurada.",
     },
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js"],
     url: "https://seurchatbot.vercel.app/",
-    color: "#E30613",
+    accentColor: "#E63312",
+    logoBg: "bg-white",
+    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-vpYTZifdUqz7NVtcf7R1xkL3IoTPg7.png",
+    logoAlt: "SEUR logo",
   },
   {
     name: "Sanitas Chatbot",
     description: {
-      en: "Health insurance assistant for Sanitas that guides users through policy coverage, appointment booking, authorisations, and finding the nearest medical centres.",
-      es: "Asistente de seguros de salud de Sanitas que orienta a los usuarios sobre coberturas, citas médicas, autorizaciones y localización de centros médicos más cercanos.",
+      en: "Health insurance assistant built with Radix UI primitives and shadcn/ui components for an accessible, WCAG-compliant interface. Gemini 1.5 Flash is prompted with a medical-services knowledge base covering policy coverage, authorisation flows and clinic finders. Conversation state is managed with React Context, and the UI uses optimistic updates so responses feel instant while the stream loads.",
+      es: "Asistente de seguros de salud construido con primitivas de Radix UI y componentes shadcn/ui para una interfaz accesible y conforme a WCAG. Gemini 1.5 Flash se invoca con una base de conocimiento de servicios médicos que cubre coberturas, flujos de autorización y localizadores de clínicas. El estado de la conversación se gestiona con React Context, y la UI usa actualizaciones optimistas para que las respuestas se perciban instantáneas mientras carga el stream.",
     },
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js", "Radix UI", "shadcn/ui"],
     url: "https://sanitaschatbot.vercel.app/",
-    color: "#00A19A",
+    accentColor: "#0099CC",
+    logoBg: "bg-white",
+    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-H5EzPRw3iVURPyR80Wal1iu5Xwnmiy.png",
+    logoAlt: "Sanitas logo",
   },
   {
     name: "Aena Chatbot",
     description: {
-      en: "Airport services assistant for Aena that provides real-time flight status, terminal information, parking options, transport connections and airport facilities.",
-      es: "Asistente de servicios aeroportuarios de Aena que ofrece estado de vuelos en tiempo real, información de terminales, aparcamiento, transporte y servicios del aeropuerto.",
+      en: "Airport services assistant for Aena leveraging Gemini 1.5 Flash with a structured prompt that covers live flight status queries, terminal maps, parking rate tables and ground transport options. react-markdown parses Gemini's markdown output into formatted flight cards and tables. The Express server caches frequent route queries with an in-memory TTL store to cut API latency on repeated requests.",
+      es: "Asistente de servicios aeroportuarios de Aena que aprovecha Gemini 1.5 Flash con un prompt estructurado que cubre consultas de estado de vuelos en tiempo real, mapas de terminales, tarifas de aparcamiento y transporte terrestre. react-markdown parsea la salida markdown de Gemini en tarjetas de vuelo y tablas formateadas. El servidor Express almacena en caché las consultas frecuentes con un store TTL en memoria para reducir la latencia de la API en peticiones repetidas.",
     },
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js", "react-markdown"],
     url: "https://aenachatbot.vercel.app/",
-    color: "#003082",
+    accentColor: "#7AB800",
+    logoBg: "bg-white",
+    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-AcfAoj18FPK4RRnTVBORSXmwHozRJQ.png",
+    logoAlt: "Aena logo",
   },
 ]
 
@@ -90,7 +109,6 @@ export default function ChatbotsContent() {
           {/* Page header */}
           <div className="flex items-center gap-6 mb-4">
             <h1 className="text-3xl font-bold text-white flex-shrink-0 whitespace-nowrap">
-              <span className="font-mono text-[#06b6d4] mr-2 opacity-70">03.</span>
               {t("AI Chatbots", "Chatbots con IA")}
             </h1>
             <div
@@ -115,22 +133,20 @@ export default function ChatbotsContent() {
                 key={bot.name}
                 className="group bg-[#111827]/60 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#1e293b] hover:border-[#06b6d4]/25 transition-all duration-300 flex flex-col"
               >
-                {/* Banner */}
-                <div className="h-32 flex justify-center items-center relative overflow-hidden bg-gradient-to-b from-[#0f172a]/80 to-[#111827]/40">
-                  <Bot
-                    size={48}
-                    className="text-slate-700 group-hover:text-[#06b6d4] transition-all duration-500 group-hover:scale-110"
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{ background: "radial-gradient(circle at 50% 60%, rgba(6,182,212,0.08) 0%, transparent 65%)" }}
-                    aria-hidden="true"
+                {/* Logo banner */}
+                <div className={`h-32 flex justify-center items-center relative overflow-hidden ${bot.logoBg}`}>
+                  <Image
+                    src={bot.logoSrc}
+                    alt={bot.logoAlt}
+                    width={160}
+                    height={72}
+                    className="object-contain max-h-16 w-auto px-4 group-hover:scale-105 transition-transform duration-500"
+                    unoptimized
                   />
                   {/* Brand accent bar */}
                   <div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-40 group-hover:opacity-80 transition-opacity duration-300"
-                    style={{ background: bot.color }}
+                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{ backgroundColor: bot.accentColor }}
                     aria-hidden="true"
                   />
                 </div>
@@ -158,7 +174,7 @@ export default function ChatbotsContent() {
                   </p>
 
                   {/* Tech chips */}
-                  <ul className="flex flex-wrap gap-2" aria-label={t("Technologies used", "Tecnologías usadas")}>
+                  <ul className="flex flex-wrap gap-2 mb-6" aria-label={t("Technologies used", "Tecnologías usadas")}>
                     {bot.tech.map((tech) => (
                       <li
                         key={tech}
@@ -174,7 +190,7 @@ export default function ChatbotsContent() {
                     href={bot.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-[#1e293b] hover:border-[#06b6d4]/40 bg-[#0f172a]/60 hover:bg-[#06b6d4]/5 text-slate-400 hover:text-[#06b6d4] text-sm font-medium transition-all duration-300"
+                    className="mt-auto flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-[#1e293b] hover:border-[#06b6d4]/40 bg-[#0f172a]/60 hover:bg-[#06b6d4]/5 text-slate-400 hover:text-[#06b6d4] text-sm font-medium transition-all duration-300"
                     aria-label={t(`Try ${bot.name}`, `Probar ${bot.name}`)}
                   >
                     <Bot size={15} aria-hidden="true" />

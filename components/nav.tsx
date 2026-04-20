@@ -1,21 +1,28 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { useLang } from "@/context/language-context"
 import { Mail, Linkedin, Github, Menu, X } from "lucide-react"
 
 const NAV_LINKS = [
-  { href: "#about",     en: "About",        es: "Sobre Mí"  },
-  { href: "#education", en: "Education",    es: "Formación" },
-  { href: "#projects",  en: "Projects",     es: "Proyectos" },
-  { href: "#services",  en: "Web Services", es: "Servicios" },
-  { href: "#contact",   en: "Contact",      es: "Contacto"  },
+  { hash: "about",     en: "About",        es: "Sobre Mí"  },
+  { hash: "education", en: "Education",    es: "Formación" },
+  { hash: "projects",  en: "Projects",     es: "Proyectos" },
+  { hash: "services",  en: "Web Services", es: "Servicios" },
+  { hash: "contact",   en: "Contact",      es: "Contacto"  },
 ] as const
 
 export default function Nav() {
   const { lang, toggle, t } = useLang()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isSubpage = pathname !== "/"
+
+  // Build correct href: on subpages prefix with /
+  const linkHref = (hash: string) => isSubpage ? `/#${hash}` : `#${hash}`
+  const logoHref = isSubpage ? "/" : "#about"
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -36,7 +43,7 @@ export default function Nav() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
-            href="#about"
+            href={logoHref}
             className="font-mono text-xl font-bold text-white tracking-tighter select-none shrink-0"
             aria-label="Iker García — home"
           >
@@ -49,8 +56,8 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.hash}
+                href={linkHref(link.hash)}
                 className="text-sm font-medium text-slate-500 hover:text-[#06b6d4] transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[#06b6d4]/5"
               >
                 {t(link.en, link.es)}
@@ -98,8 +105,8 @@ export default function Nav() {
         <div className="md:hidden bg-[#0b1120]/95 backdrop-blur-md px-6 pb-6 pt-4 flex flex-col gap-2">
           {NAV_LINKS.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.hash}
+              href={linkHref(link.hash)}
               className="text-slate-300 hover:text-[#06b6d4] transition-colors font-medium py-2 text-sm"
               onClick={() => setMenuOpen(false)}
             >
