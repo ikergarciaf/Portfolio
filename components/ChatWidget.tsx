@@ -2,15 +2,45 @@
 
 import { useState, useRef, useEffect } from "react";
 
-// Simple helper to render bold text in messages
+// Renders **bold**, line breaks and "- " bullets
 const renderContent = (text: string) => {
-  return text.split(/(\*\*.*?\*\*)/).map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={i}>{part.slice(2, -2)}</strong>;
+  const lines = text.split("\n");
+  const blocks: React.ReactNode[] = [];
+  let bulletBuffer: string[] = [];
+
+  const flushBullets = (key: string) => {
+    if (bulletBuffer.length === 0) return;
+    blocks.push(
+      <ul key={`ul-${key}`} className="chat-bullets">
+        {bulletBuffer.map((b, i) => (
+          <li key={i}>{renderInline(b)}</li>
+        ))}
+      </ul>
+    );
+    bulletBuffer = [];
+  };
+
+  lines.forEach((line, idx) => {
+    const trimmed = line.trim();
+    if (/^[-*•]\s+/.test(trimmed)) {
+      bulletBuffer.push(trimmed.replace(/^[-*•]\s+/, ""));
+    } else {
+      flushBullets(`b${idx}`);
+      if (trimmed.length > 0) {
+        blocks.push(<p key={`p${idx}`} className="chat-paragraph">{renderInline(trimmed)}</p>);
+      }
     }
-    return part;
   });
+  flushBullets("end");
+  return <>{blocks}</>;
 };
+
+const renderInline = (text: string) =>
+  text.split(/(\*\*.*?\*\*)/).map((part, i) =>
+    part.startsWith("**") && part.endsWith("**")
+      ? <strong key={i}>{part.slice(2, -2)}</strong>
+      : <span key={i}>{part}</span>
+  );
 
 interface Message {
   role: "user" | "assistant";
