@@ -1,8 +1,9 @@
 "use client"
 
 import { useLang } from "@/context/language-context"
-import { ArrowUpRight, FileText } from "lucide-react"
+import { ArrowUpRight, FileText, MessageSquare } from "lucide-react"
 import SectionHeader from "@/components/section-header"
+import Link from "next/link"
 
 interface Project {
   icon: React.ReactNode
@@ -60,6 +61,27 @@ const PROJECTS: Project[] = [
     tech: ["Nmap", "Burp Suite", "Nikto", "Linux", "OSINT", "Kali Linux"],
     link: { href: "/Auditoria.pdf", label: "View PDF Report", icon: <FileText size={15} aria-hidden="true" /> },
   },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"
+        className="w-14 h-14 text-slate-700 group-hover:text-[#06b6d4] transition-all duration-500 group-hover:scale-110"
+        aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <path d="M8 10h8M8 14h5" />
+      </svg>
+    ),
+    iconBadge: (
+      <MessageSquare className="w-5 h-5 text-[#06b6d4]" aria-hidden="true" />
+    ),
+    title: { en: "AI Chatbots", es: "Chatbots con IA" },
+    description: {
+      en: "A collection of 5 conversational AI assistants built for real brands — each one simulates a company's customer support experience powered by Google Gemini.",
+      es: "Colección de 5 asistentes de IA conversacionales construidos para marcas reales — cada uno simula la atención al cliente de una empresa usando Google Gemini.",
+    },
+    tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js"],
+    link: { href: "/chatbots", label: "Ver todos los chatbots", icon: <ArrowUpRight size={15} aria-hidden="true" /> },
+  },
 ]
 
 export default function Projects() {
@@ -76,7 +98,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader number="02" en="Technical Projects" es="Proyectos Técnicos" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {PROJECTS.map((project) => (
             <article
               key={project.title.en}
@@ -98,16 +120,27 @@ export default function Projects() {
                     {project.iconBadge}
                   </div>
                   {project.link && (
-                    <a
-                      href={project.link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-slate-500 hover:text-[#06b6d4] text-xs transition-colors font-mono"
-                      aria-label={`Open ${project.title.en}`}
-                    >
-                      {project.link.icon}
-                      {project.link.label}
-                    </a>
+                    project.link.href.startsWith("/") && !project.link.href.endsWith(".pdf") ? (
+                      <Link
+                        href={project.link.href}
+                        className="inline-flex items-center gap-1.5 text-slate-500 hover:text-[#06b6d4] text-xs transition-colors font-mono"
+                        aria-label={`Open ${project.title.en}`}
+                      >
+                        {project.link.icon}
+                        {project.link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-slate-500 hover:text-[#06b6d4] text-xs transition-colors font-mono"
+                        aria-label={`Open ${project.title.en}`}
+                      >
+                        {project.link.icon}
+                        {project.link.label}
+                      </a>
+                    )
                   )}
                 </div>
 
