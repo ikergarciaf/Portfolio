@@ -102,7 +102,7 @@ export default function Hero() {
               Iker García
             </h1>
             <h2 className="text-2xl md:text-4xl font-extrabold text-slate-400 mb-8 glow-cyan">
-              {"Securing the Future"}
+              {t("Securing the Future", "Protegiendo el Futuro")}
             </h2>
 
             <p className="text-base text-slate-400 leading-relaxed max-w-lg mb-10">
