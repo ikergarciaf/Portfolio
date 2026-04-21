@@ -41,7 +41,7 @@ const CHATBOTS: Chatbot[] = [
     tech: ["React", "Vite", "Tailwind CSS", "Google Gemini", "Express", "Node.js", "Recharts"],
     url: "https://movistar-chatbot.vercel.app/",
     accentColor: "#019DF4",
-    logoBg: "bg-[#019DF4]",
+    logoBg: "bg-white",
     logoSrc: "https://parquevistaalegre.com/tienda/movistar/Logo_Movistar_(2).svg",
     logoAlt: "Movistar logo",
   },
