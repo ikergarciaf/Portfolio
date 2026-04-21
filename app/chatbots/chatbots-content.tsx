@@ -42,7 +42,7 @@ const CHATBOTS: Chatbot[] = [
     url: "https://movistar-chatbot.vercel.app/",
     accentColor: "#019DF4",
     logoBg: "bg-[#019DF4]",
-    logoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-xm050Hw5bCNh7ofRgbkWyW7dZrB9pp.png",
+    logoSrc: "https://parquevistaalegre.com/tienda/movistar/Logo_Movistar_(2).svg",
     logoAlt: "Movistar logo",
   },
   {
