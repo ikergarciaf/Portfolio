@@ -4,7 +4,7 @@ import Nav from "@/components/nav"
 import Hero from "@/components/hero"
 import Education from "@/components/education"
 import Projects from "@/components/projects"
-import Services from "@/components/services"
+import Skills from "@/components/skills"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
@@ -16,7 +16,7 @@ export default function Page() {
         <Hero />
         <Education />
         <Projects />
-        <Services />
+        <Skills />
         <Contact />
       </main>
       <Footer />

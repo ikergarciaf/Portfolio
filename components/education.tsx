@@ -20,7 +20,7 @@ const EDUCATION: EducationItem[] = [
     logoAlt: "IMF Smart Education × UCAV",
     type: { en: "Master's Degree", es: "Máster" },
     title: { en: "Cybersecurity", es: "Ciberseguridad" },
-    institution: "IMF Smart Education × Deloitte",
+    institution: "IMF Business School × Deloitte × UCAV",
     status: "in-progress",
   },
   {
@@ -29,7 +29,7 @@ const EDUCATION: EducationItem[] = [
     type: { en: "Specialization Course", es: "Curso de Especialización" },
     title: { en: "Artificial Intelligence", es: "Inteligencia Artificial" },
     institution: "Fedeto Business School",
-    status: "in-progress",
+    status: "completed",
   },
   {
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ribera-nn4AHt7hhpgK7Ak0ivE02Q5JA47c9x.png",

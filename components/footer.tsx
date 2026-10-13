@@ -8,21 +8,17 @@ export default function Footer() {
   const { t } = useLang()
 
   return (
-    <footer className="relative py-8 mt-4">
-      {/* Subtle top fade — no hard line */}
+    <footer className="relative mt-4 py-8">
       <div
-        className="absolute top-0 inset-x-0 h-px pointer-events-none"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px"
         style={{ background: "linear-gradient(to right, transparent, rgba(6,182,212,0.15), transparent)" }}
         aria-hidden="true"
       />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <span className="font-mono text-slate-700 text-sm">
-          <span className="text-[#06b6d4]/60">{"<"}</span>
-          IkerGarcía
-          <span className="text-[#06b6d4]/60">{">"}/</span>
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 sm:flex-row sm:px-6 lg:px-8">
+        <span className="font-mono text-sm text-slate-700">
+          <span className="text-[#06b6d4]/60">&lt;</span>IkerGarcía<span className="text-[#06b6d4]/60">&gt;/</span>
         </span>
-        <p className="text-slate-700 text-sm text-center">
+        <p className="text-center text-sm text-slate-700">
           &copy; {CURRENT_YEAR} Iker García Fernández &mdash;{" "}
           {t("Built with Next.js & Tailwind.", "Hecho con Next.js y Tailwind.")}
         </p>

@@ -16,14 +16,14 @@ const firaCode = Fira_Code({
 })
 
 export const metadata: Metadata = {
-  title: "Iker García | AI & Cybersecurity",
+  title: "Iker García | Cybersecurity Analyst",
   description:
-    "Portfolio of Iker García Fernández — AI & Cybersecurity specialist. Pentesting, infrastructure security, machine learning, and custom web development.",
-  keywords: ["cybersecurity", "AI", "pentesting", "portfolio", "web development", "OSINT"],
+    "Portfolio of Iker García Fernández — Cybersecurity Analyst focused on offensive security, pentesting and web and mobile application security.",
+  keywords: ["cybersecurity", "pentesting", "offensive security", "OWASP", "OSINT", "web security", "Android security", "portfolio"],
   authors: [{ name: "Iker García Fernández" }],
   openGraph: {
-    title: "Iker García | AI & Cybersecurity",
-    description: "AI & Cybersecurity specialist portfolio",
+    title: "Iker García | Cybersecurity Analyst",
+    description: "Cybersecurity Analyst portfolio: pentesting, web and Android security audits",
     type: "website",
   },
 }

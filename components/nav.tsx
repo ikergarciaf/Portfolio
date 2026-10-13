@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { hash: "about",     en: "About",        es: "Sobre Mí"  },
   { hash: "education", en: "Education",    es: "Formación" },
   { hash: "projects",  en: "Projects",     es: "Proyectos" },
-  { hash: "services",  en: "Web Services", es: "Servicios" },
+  { hash: "skills",    en: "Skills",       es: "Skills"    },
   { hash: "contact",   en: "Contact",      es: "Contacto"  },
 ] as const
 

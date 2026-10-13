@@ -1,6 +1,6 @@
-# 🛡️ Iker García | AI & Cybersecurity Portfolio
+# 🛡️ Iker García | Cybersecurity Analyst Portfolio
 
-Bienvenido a mi portfolio personal. Este proyecto es una plataforma de alto rendimiento diseñada para mostrar mi trayectoria en **Ciberseguridad**, **Inteligencia Artificial** y **Desarrollo Web Full-Stack**.
+Bienvenido a mi portfolio personal. Este proyecto es una plataforma de alto rendimiento diseñada para mostrar mi trayectoria en **Ciberseguridad ofensiva**, **Inteligencia Artificial aplicada** y **Desarrollo Web Full-Stack**.
 
 > **Live Demo:** https://portfolioikerg.vercel.app
 
@@ -8,10 +8,10 @@ Bienvenido a mi portfolio personal. Este proyecto es una plataforma de alto rend
 
 ## 🚀 Perfil Profesional
 
-Soy un especialista enfocado en la convergencia entre la IA y la seguridad informática. Mi trabajo se centra en:
-* **Pentesting & Auditoría:** Análisis de vulnerabilidades, OSINT y escalada de privilegios.
-* **Machine Learning:** Implementación de modelos para la automatización de detección de amenazas.
-* **Desarrollo Seguro:** Creación de infraestructuras web robustas y optimizadas.
+Soy analista de ciberseguridad enfocado en seguridad ofensiva, pentesting y seguridad de aplicaciones web y móviles. Mi trabajo se centra en:
+* **Pentesting & Auditoría:** reconocimiento (OSINT), explotación y post-explotación en entornos controlados, con informes y medidas de mitigación.
+* **Seguridad de aplicaciones:** análisis web (OWASP ZAP, Burp Suite) y de apps Android (apktool, jadx, adb).
+* **IA y desarrollo:** automatización con IA y desarrollo full stack (React, TypeScript, Python).
 
 ## 🛠️ Stack Tecnológico
 
@@ -25,13 +25,15 @@ El sitio está construido con las últimas tecnologías del ecosistema web para 
 
 ## 📂 Proyectos Destacados
 
-* **Pentesting & Security Audit:** Ciclo completo de hacking ético con 9 flags capturadas, incluyendo análisis de inyección de comandos y XSS.
-* **CD Puebla Sport:** Plataforma web completa con enfoque en rendimiento y despliegue seguro en hosting.
-* **Dominios Premium IA:** Gestión de activos digitales como `agenteautonomo.es`.
+* **Auditoría de Seguridad (OSINT + explotación):** reconocimiento caja negra y explotación en máquina vulnerable (FTP anónimo, command injection, escalada a root) — 9 flags.
+* **Pentest Web WackoPicko:** OWASP ZAP + 12 vulnerabilidades explotadas manualmente (XSS, SQLi, LFI, IDOR, logic flaw...) con medidas de prevención.
+* **Auditoría de App Android:** análisis estático y dinámico (componentes exportados, criptografía débil, tráfico en claro, backdoor, bypass de root/emulador).
+* **Nexora:** SaaS de gestión para clínicas (en desarrollo).
+* **PalmoSL:** automatización empresarial con IA para Palmo Suministro Integral.
 
 ## 🎓 Formación Continua
 
-* **Máster en Ciberseguridad:** IMF Smart Education × Deloitte (En curso).
+* **Máster en Ciberseguridad:** IMF Business School × Deloitte × UCAV (En curso).
 * **Especialización en IA:** Fedeto Business School (En curso).
 * **ASIR:** Administración de Sistemas Informáticos en Red.
 
@@ -53,6 +55,7 @@ Si deseas replicar este entorno localmente:
     ```bash
     npm run dev
     ```
+4.  **Chatbot (opcional):** sin configuración, el chat responde localmente sobre el perfil y los proyectos. Para habilitar respuestas generativas, define `GEMINI_API_KEY` en `.env.local` con una clave de Google AI Studio y reinicia el servidor.
 
 ## 🔐 Seguridad y Buenas Prácticas
 
@@ -76,7 +79,6 @@ mi-portfolio/
 │   ├── hero.tsx
 │   ├── education.tsx
 │   ├── projects.tsx
-│   ├── services.tsx
 │   ├── contact.tsx
 │   └── footer.tsx
 ├── context/

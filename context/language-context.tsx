@@ -3,40 +3,38 @@
 import {
   createContext,
   useContext,
-  useState,
   useEffect,
+  useState,
   type ReactNode,
 } from "react"
 
-export type Lang = "en" | "es"
+type Lang = "en" | "es"
 
-interface LanguageContextType {
+interface LanguageContextValue {
   lang: Lang
   toggle: () => void
   t: (en: string, es: string) => string
 }
 
-const LanguageContext = createContext<LanguageContextType | null>(null)
-
+const LanguageContext = createContext<LanguageContextValue | null>(null)
 const STORAGE_KEY = "portfolio-lang"
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("es")
 
-  // Rehydrate from localStorage on mount (avoids SSR mismatch)
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY) as Lang | null
+    const saved = localStorage.getItem(STORAGE_KEY)
     if (saved === "en" || saved === "es") setLang(saved)
   }, [])
 
-  const toggle = () =>
-    setLang((prev) => {
-      const next: Lang = prev === "en" ? "es" : "en"
+  const toggle = () => {
+    setLang((current) => {
+      const next = current === "en" ? "es" : "en"
       localStorage.setItem(STORAGE_KEY, next)
-      // Update the <html lang> attribute dynamically
       document.documentElement.lang = next
       return next
     })
+  }
 
   const t = (en: string, es: string) => (lang === "en" ? en : es)
 
@@ -48,7 +46,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 }
 
 export function useLang() {
-  const ctx = useContext(LanguageContext)
-  if (!ctx) throw new Error("useLang must be used inside LanguageProvider")
-  return ctx
+  const context = useContext(LanguageContext)
+  if (!context) throw new Error("useLang must be used inside LanguageProvider")
+  return context
 }

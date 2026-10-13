@@ -1,7 +1,7 @@
 "use client"
 
 import { useLang } from "@/context/language-context"
-import { Mail, Linkedin, Github, Send } from "lucide-react"
+import { Mail, Linkedin, Github, Send, FileText } from "lucide-react"
 
 export default function Contact() {
   const { t } = useLang()
@@ -29,19 +29,31 @@ export default function Contact() {
 
         <p className="text-slate-400 text-base leading-relaxed mb-12 max-w-lg mx-auto">
           {t(
-            "Whether you have a project in mind, a security concern, or just want to connect — my inbox is always open.",
-            "Si tienes un proyecto en mente, una duda de seguridad o simplemente quieres conectar — mi bandeja de entrada siempre está abierta."
+            "I'm looking for my first role in cybersecurity: pentesting, offensive security or web application security. If my profile fits your team, let's talk.",
+            "Busco mi primer puesto en ciberseguridad: pentesting, seguridad ofensiva o seguridad de aplicaciones web. Si mi perfil encaja con tu equipo, hablemos."
           )}
         </p>
 
         {/* Main CTA */}
         <a
           href="mailto:ikergarciafdez1@gmail.com"
-          className="group inline-flex items-center gap-3 bg-[#06b6d4] hover:bg-[#22d3ee] text-[#0b1120] font-bold py-4 px-12 rounded-xl transition-all duration-200 text-base mb-16 shadow-[0_0_32px_rgba(6,182,212,0.35)] hover:shadow-[0_0_48px_rgba(6,182,212,0.55)] hover:scale-105"
+          className="group inline-flex items-center gap-3 bg-[#06b6d4] hover:bg-[#22d3ee] text-[#0b1120] font-bold py-4 px-12 rounded-xl transition-all duration-200 text-base shadow-[0_0_32px_rgba(6,182,212,0.35)] hover:shadow-[0_0_48px_rgba(6,182,212,0.55)] hover:scale-105"
         >
           <Send size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
           {t("Contact Me", "Contáctame")}
         </a>
+
+        <div className="mt-4 mb-16">
+          <a
+            href={t("/CV_IkerGarcia_EN.pdf", "/CV_IkerGarcia.pdf")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-[#06b6d4] font-mono text-sm transition-colors"
+          >
+            <FileText size={16} aria-hidden="true" />
+            {t("Download CV (PDF)", "Descargar CV (PDF)")}
+          </a>
+        </div>
 
         {/* Social links */}
         <div className="flex items-center justify-center gap-6">

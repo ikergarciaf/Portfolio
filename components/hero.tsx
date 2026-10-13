@@ -9,7 +9,7 @@ const TERMINAL_LINES = {
     "$ whoami",
     "> Iker García Fernández",
     "$ cat specialization.txt",
-    "> AI · Cybersecurity · Web Dev",
+    "> Offensive Security · Pentesting · AI",
     "$ nmap -sV localhost",
     "> PORT 443 — SECURED ✓",
   ],
@@ -17,7 +17,7 @@ const TERMINAL_LINES = {
     "$ whoami",
     "> Iker García Fernández",
     "$ cat especialización.txt",
-    "> IA · Ciberseguridad · Desarrollo Web",
+    "> Seguridad Ofensiva · Pentesting · IA",
     "$ nmap -sV localhost",
     "> PUERTO 443 — ASEGURADO ✓",
   ],
@@ -25,23 +25,25 @@ const TERMINAL_LINES = {
 
 const SKILLS = [
   "Penetration Testing",
-  "Machine Learning",
-  "Network Security",
-  "AI Security",
-  "Python",
-  "Deep Learning",
+  "Web App Security",
+  "Android Security",
+  "OWASP ZAP",
+  "Burp Suite",
+  "Nmap",
+  "Metasploit",
+  "Kali Linux",
   "OSINT",
-  "DevSecOps",
-  "React / Next.js",
-  "Laravel",
+  "Wireshark",
   "Linux",
+  "Python",
+  "Bash / PowerShell",
   "Docker",
 ] as const
 
 const STATS = [
-  { value: "9",  en: "Flags captured",  es: "Flags capturadas" },
-  { value: "2+", en: "Live projects",   es: "Proyectos activos" },
-  { value: "∞",  en: "Curiosity",       es: "Curiosidad" },
+  { value: "9",  en: "Flags captured",        es: "Flags capturadas" },
+  { value: "3",  en: "Security audits",       es: "Auditorías de seguridad" },
+  { value: "12", en: "Web vulns exploited",   es: "Vulns. web explotadas" },
 ] as const
 
 export default function Hero() {
@@ -102,31 +104,36 @@ export default function Hero() {
               Iker García
             </h1>
             <h2 className="text-2xl md:text-4xl font-extrabold text-slate-400 mb-8 glow-cyan">
-              {t("Securing the Future", "Protegiendo el Futuro")}
+              {t("Cybersecurity Analyst", "Cybersecurity Analyst")}
             </h2>
 
             <p className="text-base text-slate-400 leading-relaxed max-w-lg mb-10">
-              {t("I'm an ", "Soy especialista en ")}
+              {t("I'm a ", "Soy analista de ")}
               <span className="text-[#06b6d4] font-semibold">
-                {t("Artificial Intelligence & Cybersecurity", "Inteligencia Artificial y Ciberseguridad")}
+                {t("Cybersecurity Analyst", "Ciberseguridad")}
               </span>
               {t(
-                " specialist. I focus on building robust infrastructures, identifying vulnerabilities, and leveraging machine learning to automate threat detection.",
-                ". Me enfoco en construir infraestructuras robustas, identificar vulnerabilidades y aplicar machine learning para automatizar la detección de amenazas."
+                " focused on offensive security, penetration testing and web and mobile application security. I document findings and remediation measures, and I bring applied AI and full-stack development to the table.",
+                " especializado en seguridad ofensiva, pentesting y seguridad de aplicaciones web y móviles. Documento hallazgos y medidas de mitigación, y aporto IA aplicada y desarrollo full stack."
               )}
             </p>
 
             {/* Skill tags */}
             <div className="flex flex-wrap gap-2 mb-10" aria-label="Skills">
               {SKILLS.map((skill) => (
-                <span key={skill} className="skill-tag font-mono">{skill}</span>
+                <span
+                  key={skill}
+                  className="rounded border border-[#06b6d4]/12 bg-[#06b6d4]/8 px-2 py-0.5 font-mono text-xs text-[#06b6d4]"
+                >
+                  {skill}
+                </span>
               ))}
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="/CV_IkerGarcia.pdf"
+                href={t("/CV_IkerGarcia_EN.pdf", "/CV_IkerGarcia.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#06b6d4] hover:bg-[#22d3ee] text-[#0b1120] font-bold py-3 px-7 rounded-lg transition-all duration-200 shadow-[0_0_24px_rgba(6,182,212,0.3)] hover:shadow-[0_0_32px_rgba(6,182,212,0.5)]"
