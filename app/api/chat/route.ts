@@ -172,18 +172,18 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const model = "gemma-3-4b-it"
+    const model = "gemini-2.5-flash"
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
+        },
         body: JSON.stringify({
-          contents: [
-            { role: "user", parts: [{ text: `SYSTEM CONTEXT: ${IKER_CONTEXT}\n\nYou are Iker. Respond naturally.` }] },
-            { role: "model", parts: [{ text: "Understood. I will answer based only on the profile provided." }] },
-            ...geminiMessages,
-          ],
+          systemInstruction: { parts: [{ text: IKER_CONTEXT.trim() }] },
+          contents: geminiMessages,
           generationConfig: {
             maxOutputTokens: 300,
             temperature: 0.7,
