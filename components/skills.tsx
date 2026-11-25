@@ -5,9 +5,11 @@ import SectionHeader from "@/components/section-header"
 
 const GROUPS = [
   { en: "Offensive security", es: "Ciberseguridad ofensiva",
-    items: ["Kali Linux", "Nmap", "Burp Suite", "Metasploit", "Nikto", "Hydra", "OWASP ZAP", "Pentesting", "Vulnerability analysis", "Web security", "OSINT", "apktool", "jadx", "adb"] },
-  { en: "SIEM and detection", es: "SIEM y detección",
-    items: ["Wazuh", "Sysmon", "Auditd", "FIM", "Detection rules", "MITRE ATT&CK", "Incident handling"] },
+    items: ["Kali Linux", "Nmap", "Burp Suite", "Metasploit", "Nikto", "Hydra", "OWASP ZAP", "Shodan", "theHarvester", "Amass", "dig", "whois", "nslookup", "Pentesting", "Vulnerability analysis", "Web security", "OSINT", "apktool", "jadx", "adb", "Genymotion"] },
+  { en: "Security testing techniques", es: "Técnicas de seguridad",
+    items: ["Google Dorks", "Passive reconnaissance", "DNS reconnaissance", "Port and service scanning", "Manual security testing", "Command injection", "Privilege escalation", "SQL injection", "XSS", "LFI and path traversal", "IDOR", "Business logic testing", "Android static and dynamic analysis"] },
+  { en: "SIEM, detection and lab", es: "SIEM, detección y laboratorio",
+    items: ["Wazuh", "Sysmon", "Auditd", "journald", "FIM", "Custom detection rules", "Log correlation", "MITRE ATT&CK", "Incident handling", "VirtualBox", "hping3"] },
   { en: "Networks and systems", es: "Redes y sistemas",
     items: ["Wireshark", "Traffic analysis", "DNS", "DHCP", "HTTP", "FTP", "SMTP", "WLAN", "Linux", "Windows Server", "Active Directory", "Docker", "Ansible"] },
   { en: "Scripting and AI", es: "Scripting e IA",
