@@ -7,12 +7,12 @@ const GROUPS = [
   {
     en: "Offensive security",
     es: "Ciberseguridad ofensiva",
-    items: ["Kali Linux", "Nmap", "Burp Suite", "OWASP ZAP", "Shodan", "Passive OSINT", "Manual web testing", "Android security analysis"],
+    items: ["Kali Linux", "Nmap", "Burp Suite", "OWASP ZAP", "Metasploit", "Shodan", "Vulnerability assessment", "Privilege escalation", "Passive OSINT", "Manual web testing", "Android security analysis"],
   },
   {
     en: "SIEM and detection",
     es: "SIEM y detección",
-    items: ["Wazuh", "Sysmon", "Auditd", "FIM", "Detection rules", "MITRE ATT&CK", "Incident handling"],
+    items: ["Wazuh", "Sysmon", "Auditd", "FIM", "Custom detection rules", "Log correlation", "MITRE ATT&CK", "Incident handling"],
   },
   {
     en: "Systems and networks",
