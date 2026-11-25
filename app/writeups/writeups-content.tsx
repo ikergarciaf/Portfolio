@@ -8,6 +8,23 @@ import { FileText } from "lucide-react"
 type L = { en: string; es: string }
 const WRITEUPS: { title: L; scope: L; method: L[]; findings: L[]; fixes: L[]; pdf: string }[] = [
   {
+    title: { en: "Master's thesis: SIEM with Wazuh", es: "TFM: SIEM con Wazuh" },
+    scope: { en: "SIEM for a simulated company in an isolated VirtualBox lab with Windows 10, Windows Server (Active Directory) and Ubuntu Server. Kali Linux was used only to generate controlled test activity.",
+             es: "SIEM para una empresa simulada en un laboratorio aislado de VirtualBox con Windows 10, Windows Server (Active Directory) y Ubuntu Server. Kali Linux se usó solo para generar actividad de prueba controlada." },
+    method: [
+      { en: "Wazuh deployment, agent enrollment, Sysmon, Auditd, journald and file integrity monitoring (FIM).", es: "Despliegue de Wazuh, alta de agentes, Sysmon, Auditd, journald y monitorización de integridad de archivos (FIM)." },
+      { en: "Custom rules tested with controlled attacks: SSH brute force with Hydra, Nmap scan and hping3 SYN traffic.", es: "Reglas personalizadas probadas con ataques controlados: fuerza bruta SSH con Hydra, escaneo con Nmap y tráfico SYN con hping3." },
+    ],
+    findings: [
+      { en: "Native alert 5763 detected SSH brute force; custom rules covered privileged commands (100102), AD account creation (100103) and file changes (100104).", es: "La alerta nativa 5763 detectó la fuerza bruta SSH; las reglas propias cubrieron comandos privilegiados (100102), creación de cuentas en AD (100103) y cambios en archivos (100104)." },
+      { en: "TCP SYN and Windows firewall events were correlated (100106 to 100109) and use cases were mapped to MITRE ATT&CK.", es: "Se correlacionaron eventos TCP SYN y de firewall de Windows (100106 a 100109) y los casos de uso se mapearon a MITRE ATT&CK." },
+    ],
+    fixes: [
+      { en: "Incident-handling procedure with a manual register (INC-001), containment of the test account and an activity report.", es: "Procedimiento de gestión de incidentes con registro manual (INC-001), contención de la cuenta de prueba e informe de actividad." },
+    ],
+    pdf: "/TFM_SIEM_Wazuh.pdf",
+  },
+  {
     title: { en: "Security audit: OSINT + exploitation", es: "Auditoría de seguridad: OSINT + explotación" },
     scope: { en: "Two phases: passive black-box recon of an organization, then exploitation of a vulnerable VM provided for the exercise. No active testing was done against the real organization.",
              es: "Dos fases: reconocimiento pasivo de caja negra de una organización y explotación de una máquina vulnerable preparada para el ejercicio. No se hicieron pruebas activas sobre la organización real." },

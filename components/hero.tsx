@@ -37,7 +37,7 @@ const SKILLS = [
   "Linux",
   "Python",
   "Bash / PowerShell",
-  "Docker",
+  "SIEM / Wazuh",
 ] as const
 
 const STATS = [

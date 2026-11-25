@@ -5,9 +5,11 @@ import SectionHeader from "@/components/section-header"
 
 const GROUPS = [
   { en: "Offensive security", es: "Ciberseguridad ofensiva",
-    items: ["Kali Linux", "Nmap", "Burp Suite", "Metasploit", "Nikto", "OWASP ZAP", "Pentesting", "Vulnerability analysis", "Web security", "OSINT", "apktool", "jadx", "adb"] },
+    items: ["Kali Linux", "Nmap", "Burp Suite", "Metasploit", "Nikto", "Hydra", "OWASP ZAP", "Pentesting", "Vulnerability analysis", "Web security", "OSINT", "apktool", "jadx", "adb"] },
+  { en: "SIEM and detection", es: "SIEM y detección",
+    items: ["Wazuh", "Sysmon", "Auditd", "FIM", "Detection rules", "MITRE ATT&CK", "Incident handling"] },
   { en: "Networks and systems", es: "Redes y sistemas",
-    items: ["Wireshark", "Traffic analysis", "DNS", "DHCP", "HTTP", "FTP", "SMTP", "WLAN", "Linux", "Windows Server", "Docker", "Ansible"] },
+    items: ["Wireshark", "Traffic analysis", "DNS", "DHCP", "HTTP", "FTP", "SMTP", "WLAN", "Linux", "Windows Server", "Active Directory", "Docker", "Ansible"] },
   { en: "Scripting and AI", es: "Scripting e IA",
     items: ["Bash", "PowerShell", "Python", "Machine Learning", "Automation", "AI application security"] },
   { en: "Development", es: "Desarrollo",

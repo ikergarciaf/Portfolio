@@ -16,19 +16,21 @@ Only state facts listed below. If asked about something not listed (certificatio
 == ABOUT IKER ==
 Full name: Iker García Fernández
 Location: Toledo, Spain
-Status: Actively looking for work in cybersecurity — available immediately
+Status: Master's in Cybersecurity completed; actively looking for work in cybersecurity — available immediately
 Contact: ikergarciafdez1@gmail.com · linkedin.com/in/ikergarciaf · github.com/ikergarciaf
 
 == TECHNICAL STACK ==
 - Offensive security: Kali Linux, Nmap, Burp Suite, Metasploit, Nikto, OWASP ZAP, penetration testing, vulnerability analysis, web security, OSINT, Android app analysis (apktool, jadx, adb).
 - Networks and systems: Wireshark, traffic analysis, network security, DNS, DHCP, HTTP, FTP, SMTP, WLAN, Linux, Windows Server, Docker, Ansible.
 - Scripting and AI: Bash, PowerShell, Python, Machine Learning, automation, security of AI-based applications.
+- SIEM and detection: Wazuh, Sysmon, Auditd, FIM, detection rules, MITRE ATT&CK, incident handling.
 - Development: React, TypeScript, Next.js, Python (FastAPI), Node.js (Express), PostgreSQL.
 
 == EXPERIENCE ==
 - Intern at **devlab:studio®** (March 2025 – June 2025, Madrid, hybrid): I built the whole backend and database of two real client websites, elalquilador.com and obrasimpala.com.
 
 == CYBERSECURITY PROJECTS (all solo) ==
+- **Master's thesis: SIEM with Wazuh** — SIEM for a simulated company (Windows 10, Windows Server with Active Directory, Ubuntu Server) in an isolated lab: Wazuh agents, Sysmon, Auditd and file integrity monitoring; custom rules for privileged commands, AD account creation, file changes and TCP SYN/firewall events, validated with controlled tests (SSH brute force with Hydra, Nmap scan) and mapped to MITRE ATT&CK; incident-handling procedure (INC-001).
 - **Security audit: OSINT + exploitation** — Phase I passive black-box recon (OSINT, DNS, Shodan) with no active testing against the real organization; Phase II on a vulnerable VM: anonymous FTP, exposed credentials, command injection, privilege escalation to root via sudo misconfiguration, 9 flags.
 - **Web pentest: WackoPicko** — OWASP ZAP scan (16 alerts) and manual exploitation of 12 vulnerabilities (XSS, SQLi, LFI, directory traversal, weak credentials, predictable session ID, IDOR, logic flaw) with fixes.
 - **Android app audit** — static and dynamic analysis: exported components, AES with hardcoded key, cleartext traffic, a backdoor, root/emulator detection bypass.
@@ -38,7 +40,7 @@ Contact: ikergarciafdez1@gmail.com · linkedin.com/in/ikergarciaf · github.com/
 - **PalmoSL** — AI business automation for Palmo Suministro Integral (email classification and replies, stock forecasting). Built with AI tools as part of the AI specialization course.
 
 == EDUCATION ==
-- **Master's in Cybersecurity** — IMF Business School with Deloitte and Universidad Católica de Ávila (Nov 2025 – Nov 2026, in progress)
+- **Master's in Cybersecurity** — IMF Business School with Deloitte and Universidad Católica de Ávila (Nov 2025 – Nov 2026, completed)
 - **Specialization Course in Artificial Intelligence** — Fedeto Business School (2026)
 - **Higher Vocational Diploma in Network Systems Administration (ASIR)** — IES Ribera del Tajo (2023 – 2025)
 
@@ -74,7 +76,7 @@ function getLocalReply(messages: ChatMessage[], lang: "es" | "en") {
   if (/estudio|formacion|educacion|education|degree|master|curso|study/.test(question)) {
     return lang === "es"
       ? "Mi formación combina sistemas, ciberseguridad e inteligencia artificial:\n- **Máster en Ciberseguridad** — IMF Business School, Deloitte y UCAV (en curso).\n- **Especialización en Inteligencia Artificial** — Fedeto Business School.\n- **ASIR** — Administración de Sistemas Informáticos en Red, IES Ribera del Tajo."
-      : "My education combines systems, cybersecurity, and AI:\n- **Master's in Cybersecurity** — IMF Business School, Deloitte, and UCAV (in progress).\n- **Specialization in Artificial Intelligence** — Fedeto Business School.\n- **Network Systems Administration (ASIR)** — IES Ribera del Tajo."
+      : "My education combines systems, cybersecurity, and AI:\n- **Master's in Cybersecurity** — IMF Business School, Deloitte, and UCAV (completed in November 2026).\n- **Specialization in Artificial Intelligence** — Fedeto Business School.\n- **Network Systems Administration (ASIR)** — IES Ribera del Tajo."
   }
 
   if (/experiencia|experience|trabaj|work|emple|job|contrat|hire/.test(question)) {

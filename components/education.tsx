@@ -21,7 +21,7 @@ const EDUCATION: EducationItem[] = [
     type: { en: "Master's Degree", es: "Máster" },
     title: { en: "Cybersecurity", es: "Ciberseguridad" },
     institution: "IMF Business School × Deloitte × UCAV",
-    status: "in-progress",
+    status: "completed",
   },
   {
     logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fedeto-tWxMAErRna712kI8p8f4pvmjl75rI4.png",
