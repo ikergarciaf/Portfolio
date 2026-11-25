@@ -4,18 +4,26 @@ import { useLang } from "@/context/language-context"
 import SectionHeader from "@/components/section-header"
 
 const GROUPS = [
-  { en: "Offensive security", es: "Ciberseguridad ofensiva",
-    items: ["Kali Linux", "Nmap", "Burp Suite", "Metasploit", "Nikto", "Hydra", "OWASP ZAP", "Shodan", "theHarvester", "Amass", "dig", "whois", "nslookup", "Pentesting", "Vulnerability analysis", "Web security", "OSINT", "apktool", "jadx", "adb", "Genymotion"] },
-  { en: "Security testing techniques", es: "Técnicas de seguridad",
-    items: ["Google Dorks", "Passive reconnaissance", "DNS reconnaissance", "Port and service scanning", "Manual security testing", "Command injection", "Privilege escalation", "SQL injection", "XSS", "LFI and path traversal", "IDOR", "Business logic testing", "Android static and dynamic analysis"] },
-  { en: "SIEM, detection and lab", es: "SIEM, detección y laboratorio",
-    items: ["Wazuh", "Sysmon", "Auditd", "journald", "FIM", "Custom detection rules", "Log correlation", "MITRE ATT&CK", "Incident handling", "VirtualBox", "hping3"] },
-  { en: "Networks and systems", es: "Redes y sistemas",
-    items: ["Wireshark", "Traffic analysis", "DNS", "DHCP", "HTTP", "FTP", "SMTP", "WLAN", "Linux", "Windows Server", "Active Directory", "Docker", "Ansible"] },
-  { en: "Scripting and AI", es: "Scripting e IA",
-    items: ["Bash", "PowerShell", "Python", "Machine Learning", "Automation", "AI application security"] },
-  { en: "Development", es: "Desarrollo",
-    items: ["React", "TypeScript", "Next.js", "FastAPI", "Node.js / Express", "PostgreSQL"] },
+  {
+    en: "Offensive security",
+    es: "Ciberseguridad ofensiva",
+    items: ["Kali Linux", "Nmap", "Burp Suite", "OWASP ZAP", "Shodan", "Passive OSINT", "Manual web testing", "Android security analysis"],
+  },
+  {
+    en: "SIEM and detection",
+    es: "SIEM y detección",
+    items: ["Wazuh", "Sysmon", "Auditd", "FIM", "Detection rules", "MITRE ATT&CK", "Incident handling"],
+  },
+  {
+    en: "Systems and networks",
+    es: "Sistemas y redes",
+    items: ["Linux", "Windows Server", "Active Directory", "Wireshark", "Docker"],
+  },
+  {
+    en: "Development and scripting",
+    es: "Desarrollo y scripting",
+    items: ["Python", "Bash", "PowerShell", "React", "TypeScript", "FastAPI"],
+  },
 ] as const
 
 export default function Skills() {
