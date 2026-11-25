@@ -56,7 +56,12 @@ Si deseas replicar este entorno localmente:
     ```bash
     npm run dev
     ```
-4.  **Chatbot (opcional):** sin configuración, el chat responde localmente sobre el perfil y los proyectos. Para habilitar respuestas generativas, define `GEMINI_API_KEY` en `.env.local` con una clave de Google AI Studio y reinicia el servidor.
+4.  **Comprobar el código:**
+    ```bash
+    npm run lint
+    npm run build
+    ```
+5.  **Chatbot (opcional):** sin configuración, el chat responde localmente sobre el perfil y los proyectos. Para habilitar respuestas generativas, define `GEMINI_API_KEY` en `.env.local` con una clave de Google AI Studio y reinicia el servidor.
 
 ## 🔐 Seguridad y Buenas Prácticas
 
