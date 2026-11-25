@@ -8,7 +8,7 @@ import { FileText } from "lucide-react"
 type L = { en: string; es: string }
 const WRITEUPS: { title: L; scope: L; method: L[]; findings: L[]; fixes: L[]; pdf: string }[] = [
   {
-    title: { en: "Master's thesis: SIEM with Wazuh", es: "TFM: SIEM con Wazuh" },
+    title: { en: "SIEM with Wazuh", es: "SIEM con Wazuh" },
     scope: { en: "SIEM for a simulated company in an isolated VirtualBox lab with Windows 10, Windows Server (Active Directory) and Ubuntu Server. Kali Linux was used only to generate controlled test activity.",
              es: "SIEM para una empresa simulada en un laboratorio aislado de VirtualBox con Windows 10, Windows Server (Active Directory) y Ubuntu Server. Kali Linux se usó solo para generar actividad de prueba controlada." },
     method: [
@@ -22,7 +22,7 @@ const WRITEUPS: { title: L; scope: L; method: L[]; findings: L[]; fixes: L[]; pd
     fixes: [
       { en: "Incident-handling procedure with a manual register (INC-001), containment of the test account and an activity report.", es: "Procedimiento de gestión de incidentes con registro manual (INC-001), contención de la cuenta de prueba e informe de actividad." },
     ],
-    pdf: "/TFM_SIEM_Wazuh.pdf",
+    pdf: "/SIEM_Wazuh.pdf",
   },
   {
     title: { en: "Security audit: OSINT + exploitation", es: "Auditoría de seguridad: OSINT + explotación" },

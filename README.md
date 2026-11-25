@@ -25,7 +25,7 @@ El sitio está construido con las últimas tecnologías del ecosistema web para 
 
 ## 📂 Proyectos Destacados
 
-* **TFM: SIEM con Wazuh:** laboratorio con Windows, Active Directory y Ubuntu; agentes, Sysmon, Auditd, FIM y reglas de detección mapeadas a MITRE ATT&CK.
+* **SIEM con Wazuh:** laboratorio con Windows, Active Directory y Ubuntu; agentes, Sysmon, Auditd, FIM y reglas de detección mapeadas a MITRE ATT&CK.
 * **Auditoría de Seguridad (OSINT + explotación):** reconocimiento caja negra y explotación en máquina vulnerable (FTP anónimo, command injection, escalada a root) — 9 flags.
 * **Pentest Web WackoPicko:** OWASP ZAP + 12 vulnerabilidades explotadas manualmente (XSS, SQLi, LFI, IDOR, logic flaw...) con medidas de prevención.
 * **Auditoría de App Android:** análisis estático y dinámico (componentes exportados, criptografía débil, tráfico en claro, backdoor, bypass de root/emulador).

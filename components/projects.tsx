@@ -29,13 +29,13 @@ const PROJECTS: Project[] = [
   {
     Icon: Activity,
     category: { en: "Cybersecurity · SIEM", es: "Ciberseguridad · SIEM" },
-    title: { en: "Master's Thesis: SIEM with Wazuh", es: "TFM: SIEM con Wazuh" },
+    title: { en: "SIEM with Wazuh", es: "SIEM con Wazuh" },
     description: {
       en: "Design and implementation of a SIEM for a simulated company (Windows 10, Windows Server with Active Directory, Ubuntu Server): Wazuh, agents, Sysmon, Auditd and FIM. Custom rules for privileged commands, AD account creation, file changes and TCP SYN/firewall activity, validated with controlled tests (Hydra, Nmap) and mapped to MITRE ATT&CK.",
       es: "Diseño e implementación de un SIEM para una empresa simulada (Windows 10, Windows Server con Active Directory, Ubuntu Server): Wazuh, agentes, Sysmon, Auditd y FIM. Reglas personalizadas para comandos privilegiados, creación de cuentas en AD, cambios en archivos y actividad TCP SYN/firewall, validadas con pruebas controladas (Hydra, Nmap) y mapeadas a MITRE ATT&CK.",
     },
     tech: ["Wazuh", "Sysmon", "Auditd", "FIM", "Active Directory", "MITRE ATT&CK", "VirtualBox"],
-    link: { href: "/TFM_SIEM_Wazuh.pdf", label: "View PDF Report", kind: "pdf" },
+    link: { href: "/SIEM_Wazuh.pdf", label: "View PDF Report", kind: "pdf" },
   },
   {
     Icon: ShieldCheck,
